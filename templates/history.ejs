@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search History</title>
+  </head>
+  <body>
+    <h1>Search History</h1>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Conference</th>
+          <th>Division</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% history.forEach(entry => { %>
+        <tr>
+          <td><%= entry.conference || 'N/A' %></td>
+          <td><%= entry.division || 'N/A' %></td>
+          <td>
+            <%= entry.timestamp ? new Date(entry.timestamp).toLocaleString() :
+            'N/A' %>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <br />
+    <a href="/search">Back to Search</a>
+    <br />
+    <a href="/">HOME</a>
+    <hr />
+  </body>
+</html>

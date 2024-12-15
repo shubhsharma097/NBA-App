@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NBA Teams Search</title>
+</head>
+<body>
+    <h1>NBA Teams Search</h1>
+
+    <% if (teams && teams.data && teams.data.length > 0) { %>
+        <h2>Results</h2>
+        <ul>
+            <% teams.data.forEach(team => { %>
+                <li><%= team.full_name %> (Conference: <%= team.conference %>, Division: <%= team.division %>)</li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>Please select a conference and/or division.</p>
+    <% } %>
+
+    <form action="/search" method="post">
+        <label for="conference">Conference:</label>
+        <select name="conference" id="conference">
+            <option value="">Select Conference</option>
+            <option value="East" <%= conference === 'East' ? 'selected' : '' %>>East</option>
+            <option value="West" <%= conference === 'West' ? 'selected' : '' %>>West</option>
+        </select>
+        <br><br>
+
+        <label for="division">Division:</label>
+        <select name="division" id="division">
+            <option value="">Select Division</option>
+            <option value="Atlantic" <%= division === 'Atlantic' ? 'selected' : '' %>>Atlantic</option>
+            <option value="Central" <%= division === 'Central' ? 'selected' : '' %>>Central</option>
+            <option value="Southeast" <%= division === 'Southeast' ? 'selected' : '' %>>Southeast</option>
+            <option value="Northwest" <%= division === 'Northwest' ? 'selected' : '' %>>Northwest</option>
+            <option value="Pacific" <%= division === 'Pacific' ? 'selected' : '' %>>Pacific</option>
+            <option value="Southwest" <%= division === 'Southwest' ? 'selected' : '' %>>Southwest</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Fetch Teams</button>
+    </form>
+    <br><br>
+    <a href="/clear">Clear Search History</a><br>
+    <a href="/">HOME</a><br>
+    <hr>
+</body>
+</html>

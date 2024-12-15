@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clear Search History</title>
+  </head>
+  <body>
+    <h1>Clear Search History</h1>
+
+    <% if (typeof deletedCount !== 'undefined') { %>
+    <p>
+      Successfully cleared <strong><%= deletedCount %></strong> items from your
+      search history.
+    </p>
+    <% } %>
+
+    <form action="/clear" method="POST">
+      <button type="submit">Clear History</button>
+    </form>
+
+    <p><a href="/history">Back to Search History</a></p>
+    <p><a href="/">HOME</a></p>
+    <hr />
+  </body>
+</html>
