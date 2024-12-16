@@ -1,5 +1,5 @@
-**Final Exam Project (CMSC335 (Fall 2024))
-**
+**Final Exam Project (CMSC335 (Fall 2024))**
+
 **Submitted by**: Shubh Sharma (directory id: ssharm22)
 
 **Group Members**: Shubh Sharma (directory id: ssharm22), Bhakti Hegde (directory id: bhegde1), Debarshi Dey (directory id: ddey23)
